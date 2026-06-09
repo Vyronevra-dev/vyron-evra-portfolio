@@ -29,7 +29,7 @@ body p {
     overflow-x: hidden;
     border-radius: 30px;
     position: fixed;
-    top: 0;
+    top: 7px;
     margin-bottom: 50px;
     padding-top: 10px;
     backdrop-filter: blur(50px);
