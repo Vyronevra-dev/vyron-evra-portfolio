@@ -60,7 +60,10 @@ h1 {
     font-size: 1.1rem;
     color: #C8917A;
     margin-left: 10px;
-    animation: fade-in 3s ease infinite;
+}
+
+.nav span {
+    animation: fade-in 1.3s ease infinite;
 }
 
 @keyframes fade-in {
@@ -174,13 +177,18 @@ h2 span {
 .hero button {
     width: 100px;
     height: 40px;
-    margin-left: 35%;
-    margin-top: 10%;
+    display: block;
+    margin: 10% auto 0;
     background-color: #C8917A;
     border: none;
     color: #f0f0f9;
     border-radius: 5px;
     transition: background-color 0.3s;
+}
+
+.hero a {
+    text-decoration: none;
+    color: #f0f0f9;
 }
 
 .hero button:hover {
