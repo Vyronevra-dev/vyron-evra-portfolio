@@ -275,7 +275,7 @@ h2 span {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 2px solid yellow;
+    border: 2px solid #DAA520;
 }
 
 .about h2 {
@@ -433,7 +433,7 @@ h2 span {
     border: none;
     background-color: transparent;
     outline: none;
-    border-bottom: 2px solid yellow;
+    border-bottom: 2px solid #DAA520;
     font-family: 'Poppins', 'Inter';
     width: 100%;
     margin-bottom: 20px;
