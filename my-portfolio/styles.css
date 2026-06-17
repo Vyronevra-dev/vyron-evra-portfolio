@@ -363,6 +363,8 @@ h2 span {
 }
 
 .projects img {
+    border-radius: 5px;
+    border: 3px solid #2f2f2f;
     width: 250px;
     margin-bottom: 20px;
     transition: transform 0.7s;
@@ -626,6 +628,10 @@ footer hr {
         flex-direction: row;
         flex-wrap: wrap;
     }   
+
+    .social-links {
+        gap: 20px;
+    }
 
     .footer-container div {
         width: 50%;
