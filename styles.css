@@ -475,7 +475,7 @@ button[type=submit]:hover {
 
 @media (min-width: 768px) {
     #contact form {
-        margin-bottom: 7%
+        margin-bottom: 7%;
     }
 
     form span {
