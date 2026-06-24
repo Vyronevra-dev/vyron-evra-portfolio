@@ -453,6 +453,7 @@ h2 span {
     margin-top: 10px;
     padding: 10px;
     font-family: 'Poppins', 'Inter';
+    resize: none;
 }
 
 button[type=submit] {
