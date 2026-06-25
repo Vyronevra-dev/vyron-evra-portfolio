@@ -110,6 +110,7 @@ h1 {
     .nav { 
         padding: 15px 5px;
         align-items: center;
+        width: 100%
     }
 
     .nav .right {
