@@ -208,7 +208,7 @@ h1 {
     flex-wrap: wrap;
     padding: 15px;
     flex-direction: column-reverse;
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 50px;
 }
 
@@ -242,6 +242,7 @@ h2 span {
     border-radius: 50%;
     margin-bottom: 30px;
     margin-top: 30px;
+    border: 5px solid #2f2f2f;
 }
 
 .hero button {
