@@ -27,9 +27,7 @@ body p {
     display: flex;
     justify-content: space-between;
     border: 2px solid #C8917A;
-    overflow-x: hidden;
     position: fixed;
-    top: 7px;
     margin-bottom: 50px;
     backdrop-filter: blur(50px);
     z-index: 100;
@@ -37,35 +35,91 @@ body p {
     align-items: center;
 }
 
-.nav ul {
+.burger {
     display: flex;
+    flex-direction: column;
     gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: auto;
+}
+
+.burger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #C8917A;
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #1e1e2e;
     list-style-type: none;
 }
 
+.nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #1e1e2e;
+    list-style-type: none;
+    z-index: 99;
+}
 
-.nav a {
+.nav-links li a {
+    display: block;
+    border-bottom: 1px solid #808080;
     text-decoration: none;
     color: #f0f0f0;
     font-family: Arial, Helvetica, sans-serif;
-    transition: color 0.3s;
+    transition: background 0.3s;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    padding: 17px 20px;
 }
 
-.nav a:hover {
+.nav-links li a:hover {
     color: #C8917A;
+    background-color: #1e1e2e;
+}
+
+.nav-links li:last-child a {
+    border-bottom: none;
+}
+
+.burger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
     color: #C8917A;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
-.nav span {
+.left span {
     animation: fade-in 1.3s infinite;
+    font-weight: 100;
 }
 
 @keyframes fade-in {
@@ -82,7 +136,20 @@ h1 {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 700px) {
+    .burger {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background-color: transparent;
+    }
+
+
     .nav {
         padding: 10px 5px;
         border: 2px solid #C8917A;
@@ -92,17 +159,24 @@ h1 {
         margin-right: 10px;
     }
 
-    .nav ul {
-        gap: 18px;
-    }
-
     h1 {
         margin-left: 20px;
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
-    .nav a {
+    .nav-links li a {
         font-size: 1.1rem;
+        border-bottom: none;
+        padding: 0 10px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        transition: color 0.5s ease;
+    }
+
+    .nav-links li a:hover {
+        color: #C8917A;
+        background: none;
     }
 }
 
@@ -110,7 +184,8 @@ h1 {
     .nav { 
         padding: 15px 5px;
         align-items: center;
-        width: 100%
+        width: 100%;
+        border-radius: 60px;
     }
 
     .nav .right {
@@ -118,32 +193,28 @@ h1 {
     }
 
     h1 {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
 
-    .nav a {
+    .nav-links li a {
         font-size: 1.3rem;
     }
 }
 
 .hero {
     width: 100%;
-    border-radius: 10px;
-    border: 2px solid #C8917A;
     display: flex;
     flex-wrap: wrap;
     padding: 15px;
     flex-direction: column-reverse;
-    margin-bottom: 50px;
-    background-color: rgba(47, 47, 47, 0.5);
     margin-top: 80px;
+    margin-bottom: 50px;
 }
 
 hr {
     border: 2px solid rgba(200, 145, 122, 0.9);
     width: 90%;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 5% auto;
 }
 
 .hero h2 {
@@ -275,7 +346,7 @@ h2 span {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 2px solid yellow;
+    border: 2px solid #C8917A;
 }
 
 .about h2 {
@@ -299,7 +370,7 @@ h2 span {
 
 @media (min-width: 768px) {
     .about {
-        border: 2px solid rgba(219, 186, 171, 0.9);
+        border: 2px solid #2f2f2f;
         width: 100%;
         display: flex;
         flex-wrap: wrap;
@@ -324,6 +395,7 @@ h2 span {
         flex-wrap: nowrap;
         margin-left: auto;
         margin-right: auto;
+        gap: 25px;
     }
 
     .about p {
@@ -356,57 +428,92 @@ h2 span {
 .projects {
     width: 100%;
     padding-top: 30px;
-    border: 3px solid #2f2f2f;
+    padding-bottom: 30px;
     border-radius: 10px;
-    margin-bottom: 50px;
 }
 
 .projects img {
-    border-radius: 5px;
-    border: 3px solid #2f2f2f;
-    width: 250px;
-    margin-bottom: 20px;
-    transition: transform 0.7s;
-}
-
-.projects div {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5px;
+    height: 100%;
+    display: block;
+    margin-bottom: 20px;
+    object-fit: cover;
+    transform-origin: center center;
+    transition: transform 0.7s ease-in-out;
+    border-radius: 5px;
 }
 
-.projects img:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
+.project {
+    width: 95%;
+    padding: 1rem;
+    margin: 0 auto 7%;
+    background: #1e1e2e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: border 0.5s;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.project:hover {
+    border: 1px solid #C8917A;
+}
+
+.project-title h3 {
+    font-family: 'Poppins', 'Inter';
+    color: #f0f0f0;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.project-title p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    color: #808080;
+    letter-spacing: 1.25px;
+    margin-bottom: 10px;
+}
+
+.project-title div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+.project-title span {
+    font-family: "Space Mono", monospace;
+    font-size: 0.75rem;
+    color: #C8917A;
+    padding: 5px 15px;
+    border: 1px solid #C8917A;
+    border-radius: 20px;
+    letter-spacing: 2px;
 }
 
 @media (min-width: 768px) {
+    .project {
+        padding: 1.5rem;
+    }
+
     .projects {
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        margin-left: auto;
-        margin-right: auto;
-    }
+        column-gap: 30px;
+        row-gap: 15px;
+        padding: 30px;
+        border: 3px solid #2f2f2f;
 
-    .projects div {
-        margin: 0;
-    }
-
-    .projects img {
-        width: 350px;
     }
 }
 
 @media (min-width: 1024px) {
     .projects {
         width: 70%;
-    }
-
-    .projects div {
-        margin-bottom: 10px;
+        margin: 0 auto;
     }
 
     #projects h2 {
@@ -426,10 +533,10 @@ h2 span {
 #contact form {
     width: 100%;
     border: 2px solid #2f2f2f;
-    background-color: rgba(47, 47, 47, 0.5);
+    background-color: #1e1e2e;
     padding: 20px;
     border-radius: 10px;
-    margin-bottom: 10%;
+    margin-bottom: 15%;
 }
 
 #contact input {
@@ -490,7 +597,7 @@ button[type=submit]:hover {
 
 @media (min-width: 1024px) {
     #contact form {
-        width: 70%;
+        width: 60%;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 5%;
@@ -499,7 +606,7 @@ button[type=submit]:hover {
 
 footer {
     width: 100%;
-    background-color: #c4846e;
+    background-color: #1e1e2e;
     margin-top: 10%;
     padding-bottom: 20px;
 }
@@ -518,19 +625,24 @@ footer {
     font-family: 'Poppins', 'Inter';
 }
 
+.footer-container h2 {
+    color: #fff;
+}
+
 .footer-container hr {
     width: 90%;
     margin: 2% auto;
-    border: 1px solid #212121; 
+    border: 1px solid #C8917A; 
 }
 
 .footer-container div:first-child img {
     width: 100px; 
     border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 .footer-container div:first-child p {
-    font-family: cursive;
+    font-size: 0.85rem;
 }
 
 .footer-container .badge {
@@ -588,7 +700,7 @@ footer {
 }
 
 .footer-container ul a:hover {
-    color: #212121;
+    color: #C8917A;
 }
 
 .footer-container a {
@@ -611,7 +723,7 @@ footer {
 }
 
 footer hr {
-    border: 1px solid #212121;
+    border: 1px solid #c4846e;
     margin: 5% auto 3%;
 }
 
@@ -684,7 +796,6 @@ footer hr {
     width: 100%;
     padding-top: 30px;
     border-radius: 10px;
-    margin-bottom: 50px;   
 }
 
 .certificates a {
@@ -700,6 +811,7 @@ footer hr {
     padding: 1.5rem;
     transition: border 0.5s;
     outline: none;
+    cursor: pointer;
 }
 
 .certificate:hover {
