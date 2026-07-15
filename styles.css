@@ -448,7 +448,7 @@ h2 span {
 .project {
     width: 95%;
     padding: 1rem;
-    margin: 0 auto 7%;
+    margin: 0 auto;
     background: #1e1e2e;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
@@ -493,6 +493,23 @@ h2 span {
     border: 1px solid #808080;
     border-radius: 20px;
     letter-spacing: 2px;
+}
+
+#projects button {
+    padding: 10px 20px;
+    background-color: #C8917A;
+    color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    margin: 7% auto;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+#projects button:hover {
+    background-color: rgba(200, 145, 122, 0.9);
+    cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -712,6 +729,11 @@ footer {
 
 .footer-container a img {
     width: 30px;
+    transition: filter 0.5s;
+}
+
+.footer-container a img:hover {
+    filter: brightness(70%);
 }
 
 .social-links {
