@@ -73,30 +73,25 @@ body p {
     top: 60px;
     left: 0;
     width: 100%;
-    background-color: #1e1e2e;
+    background-color: #c4846e;
     list-style-type: none;
     z-index: 99;
 }
 
 .nav-links li a {
     display: block;
-    border-bottom: 1px solid #808080;
     text-decoration: none;
     color: #f0f0f0;
     font-family: Arial, Helvetica, sans-serif;
     transition: background 0.3s;
     font-weight: bold;
     font-size: 1.1rem;
-    padding: 17px 20px;
+    padding: 20px;
 }
 
 .nav-links li a:hover {
     color: #C8917A;
     background-color: #1e1e2e;
-}
-
-.nav-links li:last-child a {
-    border-bottom: none;
 }
 
 .burger.open span:nth-child(1) {
