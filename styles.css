@@ -49,8 +49,9 @@ body p {
 
 .burger span {
     display: block;
-    width: 25px;
+    width: 32px;
     height: 2px;
+    border-radius: 2px;
     background-color: #C8917A;
     transition: all 0.3s ease;
 }
@@ -464,7 +465,7 @@ h2 span {
 .project {
     width: 95%;
     padding: 1rem;
-    margin: 0 auto;
+    margin: 0 auto 5%;
     background: #252535;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
