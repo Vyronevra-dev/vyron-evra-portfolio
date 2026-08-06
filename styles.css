@@ -11,6 +11,8 @@
 html {
     overflow-x: hidden;
     scroll-behavior: smooth;
+    scrollbar-color: #C8917A rgba(200, 145, 122, 0.1);
+    scrollbar-width: auto;
 }
 
 body {
