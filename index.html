@@ -43,11 +43,11 @@
 
             <div class="right">
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certificates">Credentials</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" draggable="false">Home</a></li>
+                <li><a href="#about" draggable="false">About Me</a></li>
+                <li><a href="#projects" draggable="false">Projects</a></li>
+                <li><a href="#certificates" draggable="false">Credentials</a></li>
+                <li><a href="#contact" draggable="false">Contact</a></li>
             </ul>
             </div>
         </div>
@@ -61,7 +61,7 @@
       </div>
 
       <div>
-      <img src="images/LEGO_PFP.png" alt="Vyron Evra">
+      <img src="images/LEGO_PFP.png" alt="Vyron Evra" draggable="false">
       </div>
     </div>
     </section>
@@ -201,18 +201,19 @@
         </div>
 
         <div class="right-contact">
-        <form>
-            <input type="text" placeholder="First Name" required>
+        <form id="contactForm">
+            <input type="text" name="firstName" placeholder="First Name" required />
 
-            <input type="text" placeholder="Last Name" required>
+            <input type="text" name="lastName" placeholder="Last Name" required />
 
-            <input type="email" placeholder="Email Address" required>
+            <input type="email" name="email" placeholder="Email Address" required />
 
-            <textarea placeholder="Write your message..."></textarea>
-            <a href="#">
+            <textarea name="message" placeholder="Write your message..."></textarea>
+            <button href="#" draggable="false">
                 Send
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#252535" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-send"> <path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M10 14l11 -11" /> <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5" /> </svg>
-            </a>
+            </button>
+            <p id="formMsg"></p>
         </form>
         </div>
     </div>
@@ -221,7 +222,7 @@
     <footer>
         <div class="footer-container">
             <div>
-                <img src="images/VYRON_LOGO.png" alt="Vyron Evra's Logo" loading="lazy">
+                <img src="images/VYRON_LOGO.png" alt="Vyron Evra's Logo" loading="lazy" draggable="false">
                 <p><i>"Building the web one pixel at a time"</i></p> 
                 <span class="badge">Available for freelance</span>
             </div>
@@ -231,11 +232,11 @@
             <div>
                 <h2>QUICK LINKS</h2>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#certificates">Credentials</a></li>
-                    <li><a href="#contact">Contact</a></li> 
+                    <li><a href="#home" draggable="false">Home</a></li>
+                    <li><a href="#about" draggable="false">About Me</a></li>
+                    <li><a href="#projects" draggable="false">Projects</a></li>
+                    <li><a href="#certificates" draggable="false">Credentials</a></li>
+                    <li><a href="#contact" draggable="false">Contact</a></li> 
                 </ul>
             </div>
 

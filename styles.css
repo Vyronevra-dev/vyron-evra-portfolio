@@ -12,7 +12,7 @@ html {
     overflow-x: hidden;
     scroll-behavior: smooth;
     scrollbar-color: #C8917A rgba(200, 145, 122, 0.1);
-    scrollbar-width: auto;
+    scrollbar-width: thin;
 }
 
 body {
@@ -114,6 +114,7 @@ h1 {
     font-size: 1.5rem;
     color: #C8917A;
     margin-left: 20px;
+    user-select: none;
 }
 
 .left span {
@@ -939,6 +940,7 @@ input::placeholder {
 }
 
 .right-contact textarea {
+    font-family: 'Poppins', 'Inter';
     width: 100%;
     height: 250px;
     border-radius: 10px;
@@ -962,11 +964,12 @@ textarea::placeholder {
     border: 1px solid #C8917A;
 }
 
-.right-contact a {
+.right-contact button {
     width: 100%;
     padding: 10px 0;
     background-color: #C8917A;
     display: block;
+    border: none;
     border-radius: 10px;
     text-align: center;
     text-decoration: none;
@@ -974,14 +977,15 @@ textarea::placeholder {
     font-weight: 800;
     font-family: 'Poppins', 'Inter';
     transform: translateY(0);
-    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+    transition: background-color 0.ss ease-in-out;
 }
 
-.right-contact a:hover {
-    transform: translateY(-5px);
+.right-contact button:hover {
+    background-color: rgba(200, 145, 122, 0.9);
 }
 
-.right-contact a svg {
+.right-contact button svg {
     vertical-align: middle;
     margin-left: 5px;
     width: 20px;
@@ -991,4 +995,19 @@ textarea::placeholder {
     #contact .contacts {
         width: 85%;
     }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(200, 145, 122, 0.1) inset;
+  -webkit-text-fill-color: #ffffff;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+#formMsg {
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
 }
