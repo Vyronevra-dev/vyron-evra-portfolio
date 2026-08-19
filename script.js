@@ -30,12 +30,10 @@ function showToast(message, type) {
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const spinner = document.getElementById("spinner");
     const submitBtn = form.querySelector("button[type='submit']");
     const originalHTML = submitBtn.innerHTML;
 
-    // show spinner, disable button
-    spinner.style.display = "block";
+    // Disable button
     submitBtn.disabled = true;
     submitBtn.innerHTML = "Sending...";
 
@@ -47,8 +45,7 @@ form.addEventListener("submit", async (e) => {
 
     const result = await response.json();
 
-    // hide spinner, re-enable button
-    spinner.style.display = "none";
+    // Re-enable button
     submitBtn.disabled = false;
     submitBtn.innerHTML = originalHTML;
 
