@@ -26,13 +26,13 @@ body {
     position: fixed;
     top: 70px;
     left: 50%;
-    transform: translateX(-50%) translateY(-120px);
+    transform: translateX(-50%) translateY(-200px);
     background-color: #f0f0f0;
     border-left: 8px solid #C8917A;
     padding: 20px 35px 20px 20px;
     border-radius: 3px;
     z-index: 9999;
-    transition: transform 0.4s ease;
+    transition: transform 0.6s ease;
     width: 90%;
     min-width: 280px;
     text-align: left;
@@ -61,9 +61,9 @@ body {
     .toast {
         left: auto;
         right: 20px;
-        top: 82px;
-        width: 380px;
-        transform: translateX(120%) translateY(0);
+        top: 85px;
+        max-width: 480px;
+        transform: translateX(200%) translateY(0);
     }
 
     .toast.show {
