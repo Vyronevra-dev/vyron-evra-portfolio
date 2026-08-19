@@ -28,7 +28,7 @@ body {
     left: 50%;
     transform: translateX(-50%) translateY(-200px);
     background-color: #f0f0f0;
-    border-left: 8px solid #C8917A;
+    border-left: 8px solid #10B981;
     padding: 20px 35px 20px 20px;
     border-radius: 3px;
     z-index: 9999;
@@ -48,13 +48,25 @@ body {
     border-left-color: #C8917A;
 }
 
+.toast.success #toastMsg {
+    color: #C8917A;
+}
+
 .toast.error {
-    border-left-color: #ff4d4d;
+    border-left-color: #ff0000;
+}
+
+.toast.error #toastMsg {
+    color: #ff0000;
 }
 
 #toastMsg {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     color: #252535;
     font-weight: 600;
+    color: #C8917A;
 }
 
 @media (min-width: 768px) {
@@ -322,6 +334,7 @@ h2 span {
     border-radius: 5px;
     transition: background-color 0.3s;
     width: fit-content;
+    font-family: 'Poppins', 'Inter';
 }
 
 .hero a {
