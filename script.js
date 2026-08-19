@@ -4,14 +4,16 @@ const form = document.getElementById("contactForm");
 const firstName = document.querySelector("input[name='firstName']");
 
 burger.addEventListener('click', () => {
-    burger.classList.toggle('open');
-    navLinks.classList.toggle('open');
+  const isOpen = burger.classList.toggle('open');
+  navLinks.classList.toggle('open', isOpen);
+  burger.setAttribute('aria-expanded', String(isOpen));
 });
 
 document.addEventListener('click', (e) => {
   if (!burger.contains(e.target) && !navLinks.contains(e.target)) {
     burger.classList.remove('open');
     navLinks.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
   }
 });
 
@@ -33,26 +35,27 @@ form.addEventListener("submit", async (e) => {
     const submitBtn = form.querySelector("button[type='submit']");
     const originalHTML = submitBtn.innerHTML;
 
-    // Disable button
     submitBtn.disabled = true;
     submitBtn.innerHTML = "Sending...";
 
-    const response = await fetch("https://formspree.io/f/xdenwyoq", {
-      method: "POST",
-      headers: { "Accept": "application/json" },
-      body: new FormData(form)
-    });
+    try {
+      const response = await fetch("https://formspree.io/f/xdenwyoq", {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: new FormData(form)
+      });
+      const result = await response.json();
 
-    const result = await response.json();
-
-    // Re-enable button
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = originalHTML;
-
-    if (result.ok) {
-      showToast(`Message sent. I'll get back to you soon, ${firstName.value}!`, "success");
-      form.reset();
-    } else {
-      showToast("Something went wrong, try again.", "error");
+      if (response.ok && result.ok) {
+        showToast(`Message sent. I'll get back to you soon, ${firstName.value}!`, "success");
+        form.reset();
+      } else {
+        showToast("Something went wrong, try again.", "error");
+      }
+    } catch {
+      showToast("Unable to send your message. Check your connection and try again.", "error");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalHTML;
     }
 });

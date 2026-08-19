@@ -311,7 +311,7 @@ h2 span {
     border: 5px solid #2f2f2f;
 }
 
-.hero button {
+.hero-button {
     padding: 15px 20px;
     display: block;
     margin: 10% auto 0;
@@ -321,13 +321,14 @@ h2 span {
     color: #252535;
     border-radius: 5px;
     transition: background-color 0.3s;
+    width: fit-content;
 }
 
 .hero a {
     text-decoration: none;
 }
 
-.hero button:hover {
+.hero-button:hover {
     background-color: rgba(200, 145, 122, 0.9);
     cursor: pointer;
 }
@@ -354,7 +355,7 @@ h2 span {
         font-size: 1.17rem;
     }
 
-    .hero button {
+    .hero-button {
     padding: 15px 25px;
     font-size: 1.1rem;
     }
