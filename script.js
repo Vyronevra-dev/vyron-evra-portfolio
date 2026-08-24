@@ -18,39 +18,32 @@ const commands = {
   clear               — clear the terminal
   help                — show this list`,
 
-    whoami: `
-    Vyron Evra Ojoy. A 19 years old Web Developer and a Computer Science student at Chuka University, graduating in 2030. Born and raised in Nairobi, Kenya.
-    
-    Started my Web Development journey in the year 2026 at Ta'awun Vocational Training College after having deep interest in building things rather than learning things theoretically.
+    whoami: `Vyron Evra Ojoy. 19. CS student at Chuka University, graduating 2030. Born and raised in Nairobi, Kenya. Started building in 2026 at Ta'awun Vocational Training College after realizing I cared more about making things than studying them.`,
 
-    Open for freelance 24/7, holla at me and let's build this!
-    `,
+    'cat about.txt': `I build with HTML, CSS, and JavaScript. Clean interfaces, purposeful code. Alongside development I am self-studying cybersecurity because I want to understand systems well enough to both build and break them. I hold myself to a high standard regardless of the project size or who it is for. Open for freelance 24/7.`,
 
-    'cat about.txt': `I build real projects using HTML, CSS, and JavaScript. I take security seriously as a discipline and want to understand systems well enough to both build and protect them. Driven by curiosity and a high standard regardless of the size of the project.`,
+    'ls projects/': `Open the projects section to see these in real time:
 
-    'ls projects/': `
-    Open the projects section to see these projects in real time.
-  ashbourne-school    — live     
-  ellingtons-motors   — live     
-  codepanda           — live     
-  seed-initiative     — coming soon
-  `,
+  ashbourne-school    — live
+  ellingtons-motors   — live
+  codepanda           — live
+  seed-initiative     — coming soon`,
 
-    'ls skills/': `Each skill is proven by real projects, so see them, go to the "Projects" section to see:
-    
-  • HTML              • Git           • Cybersecurity (learning)        
+    'ls skills/': `Each skill is proven by real projects:
+
+  • HTML              • Git
   • CSS               • GitHub
-  • JavaScript        • Vercel     
-  `,
+  • JavaScript        • Vercel
+  • Cybersecurity (learning)`,
 
-    focus: `Currently focused on two things: 
-    
-  • Learning new technologies such as exploring modern UI/UX design.  It is an exciting journey to see how technology grows and how we design better experiences. 
-  • Learning cybersecurity from the ground up by understanding how systems work, how they break, and how to build them better.`,
+    focus: `Currently focused on two things:
 
-    status: `Open to freelance work. If you have a project in mind that needs a clean, purposeful interface built from scratch, I'm the guy. I show up with the same level of focus regardless of the size of the project or who it is for.`,
+  • Exploring modern UI/UX design and how better experiences are built.
+  • Learning cybersecurity from the ground up — how systems work, how they break, and how to build them better.`,
 
-    contact: `Best way to reach me is via email at "vyronevra27@gmail.com". You can also find me on GitHub as "Vyronevra-dev", or connect on LinkedIn as "Vyron Evra". If you have something worth building, do not hesitate to reach out.`,
+    status: `Open to freelance work. If you have a project that needs a clean, purposeful interface built from scratch, I am the guy. Same level of focus regardless of project size or who it is for.`,
+
+    contact: `Best way to reach me is via email at vyronevra27@gmail.com. Also on GitHub as Vyronevra-dev and LinkedIn as Vyron Evra. If you have something worth building, reach out.`,
 
     clear: null
 };
