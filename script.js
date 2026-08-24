@@ -2,7 +2,88 @@ const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
 const form = document.getElementById("contactForm");
 const firstName = document.querySelector("input[name='firstName']");
+const ring = document.querySelector("#cursorRing");
+let mouseX = 0, mouseY = 0;
+let ringX = 0, ringY = 0;
+const commands = {
+    help: `available commands:
 
+  whoami              — who is Vyron?
+  cat about.txt       — the full story
+  ls projects/        — what I've built
+  ls skills/          — the full tech stack
+  focus               — what I'm working on
+  status              — availability
+  contact             — get in touch
+  clear               — clear the terminal
+  help                — show this list`,
+
+    whoami: `
+    Vyron Evra Ojoy. A 19 years old Web Developer and a Computer Science student at Chuka University, graduating in 2030. Born and raised in Nairobi, Kenya.
+    
+    Started my Web Development journey in the year 2026 at Ta'awun Vocational Training College after having deep interest in building things rather than learning things theoretically.
+
+    Open for freelance 24/7, holla at me and let's build this!
+    `,
+
+    'cat about.txt': `I build real projects using HTML, CSS, and JavaScript. I take security seriously as a discipline and want to understand systems well enough to both build and protect them. Driven by curiosity and a high standard regardless of the size of the project.`,
+
+    'ls projects/': `
+    Open the projects section to see these projects in real time.
+  ashbourne-school    — live     
+  ellingtons-motors   — live     
+  codepanda           — live     
+  seed-initiative     — coming soon
+  `,
+
+    'ls skills/': `Each skill is proven by real projects, so see them, go to the "Projects" section to see:
+    
+  • HTML              • Git           • Cybersecurity (learning)        
+  • CSS               • GitHub
+  • JavaScript        • Vercel     
+  `,
+
+    focus: `Currently focused on two things: 
+    
+  • Learning new technologies such as exploring modern UI/UX design.  It is an exciting journey to see how technology grows and how we design better experiences. 
+  • Learning cybersecurity from the ground up by understanding how systems work, how they break, and how to build them better.`,
+
+    status: `Open to freelance work. If you have a project in mind that needs a clean, purposeful interface built from scratch, I'm the guy. I show up with the same level of focus regardless of the size of the project or who it is for.`,
+
+    contact: `Best way to reach me is via email at "vyronevra27@gmail.com". You can also find me on GitHub as "Vyronevra-dev", or connect on LinkedIn as "Vyron Evra". If you have something worth building, do not hesitate to reach out.`,
+
+    clear: null
+};
+
+
+// Custom cursor
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  ring.style.opacity = '1';
+});
+
+document.querySelectorAll('a, button, input, textarea, #terminal').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    ring.style.opacity = '0';
+    ring.style.transform = 'translate(-50%, -50%) scale(0)';
+  });
+  el.addEventListener('mouseleave', () => {
+    ring.style.opacity = '1';
+    ring.style.transform = 'translate(-50%, -50%) scale(1)';
+  });
+});
+
+(function animate() {
+  ringX += (mouseX - ringX) * 0.12;
+  ringY += (mouseY - ringY) * 0.12;
+  ring.style.left = ringX + 'px';
+  ring.style.top = ringY + 'px';
+  requestAnimationFrame(animate);
+})();
+
+
+// Burger menu toggle
 burger.addEventListener('click', () => {
   const isOpen = burger.classList.toggle('open');
   navLinks.classList.toggle('open', isOpen);
@@ -17,6 +98,63 @@ document.addEventListener('click', (e) => {
   }
 });
 
+// Terminal
+function switchView(tab, btn) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.add('hidden'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+    const activePanel = document.getElementById(tab);
+    activePanel.classList.remove('hidden');
+    activePanel.classList.remove('panel-animate');
+
+    void activePanel.offsetWidth;
+
+    activePanel.classList.add('panel-animate');
+
+    const actualBtn = btn.closest('.tab-btn');
+    actualBtn.classList.add('active');
+
+    if (tab === 'txt') {
+    document.getElementById('term-output').innerHTML = '';
+    document.getElementById('termInput').value = '';
+    }
+
+    if (tab === 'terminal') {
+        document.getElementById('termInput').focus();
+    }
+}
+
+document.getElementById('termInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+        const input = this.value.trim().toLowerCase();
+        const output = document.getElementById('term-output');
+
+        const cmdLine = document.createElement('p');
+        cmdLine.className = 'term-line cmd';
+        cmdLine.textContent = `vyron@nairobi ~ $ ${input}`;
+        output.appendChild(cmdLine);
+
+        if (input === 'clear') {
+            output.innerHTML = '';
+        } else if (commands[input] !== undefined && commands[input] !== null) {
+            const res = document.createElement('p');
+            res.className = 'term-line response';
+            res.textContent = commands[input];
+            output.appendChild(res);
+        } else if (input !== '') {
+            const err = document.createElement('p');
+            err.className = 'term-line error';
+            err.textContent = `command not found: ${input}. Type 'help' for available commands.`;
+            output.appendChild(err);
+        }
+
+        this.value = '';
+        output.scrollTop = output.scrollHeight;
+    }
+});
+
+
+// Submit Form
 function showToast(message, type) {
   const toast = document.getElementById("toast");
   const toastMsg = document.getElementById("toastMsg");
@@ -68,3 +206,4 @@ form.addEventListener("submit", async (e) => {
       submitBtn.innerHTML = originalHTML;
     }
 });
+

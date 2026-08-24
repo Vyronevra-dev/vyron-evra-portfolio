@@ -19,6 +19,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montez&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <!--Cards Previews-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="VYRON EVRA OJOY">
     <meta name="twitter:description" content="Vyron Evra Ojoy - Web Developer Based In Nairobi. I Build Clean, accessible and purposeful digital experiences.">
@@ -34,6 +39,8 @@
     <div class="toast" id="toast">
         <span id="toastMsg">Message sent!</span>
     </div>
+
+    <div class="cursor-ring" id="cursorRing"></div>
 
     <header>
         <div class="nav">
@@ -73,19 +80,100 @@
     </section>
 
     <section id="about">
-      <div class="about">
-        <div>
-            <img src="images/LEGO_PFP.png" alt="Vyron Evra" loading="lazy" draggable="false">
+
+        <div class="about-top">
+            <h2>About Me</h2>
+            <div class="about-tabs">
+                <button class="tab-btn active" onclick="switchView('txt', this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="#f0f0f0" d="M304 112L192 112C183.2 112 176 119.2 176 128L176 512C176 520.8 183.2 528 192 528L448 528C456.8 528 464 520.8 464 512L464 272L376 272C336.2 272 304 239.8 304 200L304 112zM444.1 224L352 131.9L352 200C352 213.3 362.7 224 376 224L444.1 224zM128 128C128 92.7 156.7 64 192 64L325.5 64C342.5 64 358.8 70.7 370.8 82.7L493.3 205.3C505.3 217.3 512 233.6 512 250.6L512 512C512 547.3 483.3 576 448 576L192 576C156.7 576 128 547.3 128 512L128 128z"/></svg><span>about.txt</span></button>
+                <button class="tab-btn" onclick="switchView('terminal', this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="#f0f0f0" d="M73.4 182.6C60.9 170.1 60.9 149.8 73.4 137.3C85.9 124.8 106.2 124.8 118.7 137.3L278.7 297.3C291.2 309.8 291.2 330.1 278.7 342.6L118.7 502.6C106.2 515.1 85.9 515.1 73.4 502.6C60.9 490.1 60.9 469.8 73.4 457.3L210.7 320L73.4 182.6zM288 448L544 448C561.7 448 576 462.3 576 480C576 497.7 561.7 512 544 512L288 512C270.3 512 256 497.7 256 480C256 462.3 270.3 448 288 448z"/></svg><span>terminal</span></button>
+            </div>
         </div>
 
-        <div>
-            <h2>About Me</h2>
-            <h3>Creative Frontend Developer</h3>
-            <p>I'm a frontend developer with experience in HTML, CSS, and JavaScript, passionate about building modern, responsive, and visually engaging websites. I focus on creating clean UI and smooth UX by combining creativity with functional code. I enjoy transforming ideas into interactive digital experiences that not only look good but also perform efficiently across different devices and screen sizes.</p>
-            <br>
-            <p>Beyond coding, I'm constantly exploring new design trends and web technologies to improve my skills and stay updated with the evolving tech industry. I pay close attention to detail, value clean and organized code, and enjoy the process of solving problems through design and development. My goal is to continue growing as a developer while creating impactful and memorable web experiences.</p>
+        <div class="about-wrap">
+            <div class="panel" id="txt">
+                <p>I'm Vyron Evra Ojoy. A Computer Science student and a Web Developer. I build build real projects using HTML, CSS, and JavaScript. I write clean codes, shape user interfaces, and refine the details making websites work smoothly.</p>
+                <br>
+                <p>Alongside development, I am a self-learning student in cybersecurity. I take security seriously as a discipline and want to understand systems well enough to both build and protect them.</p>
+                <br>
+                <p>I am driven by curiosity and a strong desire to grow. I enjoy the process of figuring things out, and I hold myself to a high standard regardless of the size of the project or who it is for.</p>
+                <br>
+                <p class="terminal-advert">// If you want to know more about me, click the "Terminal" button at the top right. It talks.</p>
+            </div>
+            
+            <div class="panel hidden" id="terminal">
+                <div class="terminal-head">
+                    <div class="terminal-apple-navigator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="terminal-name">
+                        <span>--vyron@nairobi</span>
+                    </div>
+                </div>
+                <div class="terminal-body">
+                    <p class="term-welcome">Welcome to vyron@nairobi ~</p>
+                    <p class="term-hint">Type 'help' to see available commands.</p>
+                    <div id="term-output"></div>
+                    <div class="term-input-row">
+                        <span class="term-prompt">vyron@nairobi ~ $</span>
+                        <input type="text" id="termInput" autocomplete="off" spellcheck="false" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-window">
+        
+                <div class="about-header">
+                    <div class="about-apple-navigator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="about-header-txt">
+                        <span>vyron --info</span>
+                    </div>
+                </div>
+
+                <div class="about-table">
+                    <div class="row">
+                        <span class="label">location</span>
+                        <span class="value">Nairobi, Kenya</span>
+                    </div>
+
+                    <div class="row">
+                        <span class="label">college</span>
+                        <span class="value">Ta'awun Vocational Training College</span>
+                    </div>
+
+                    <div class="row">
+                        <span class="label">university</span>
+                        <span class="value">Chuka University</span>
+                    </div>
+
+                    <div class="row">
+                        <span class="label">focus</span>
+                        <span class="value">Web Dev + cybersecurity</span>
+                    </div>
+
+                    <div class="row">
+                        <span class="label">stack</span>
+                        <span class="value">HTML • CSS • JS </span>
+                    </div>
+
+                    <div class="row">
+                        <span class="label">deploys</span>
+                        <span class="value">Vercel</span>
+                    </div>
+
+                    <div class="row">
+                        <span class="label">status</span>
+                        <span class="value">Open to freelance work</span>
+                    </div>
+            
+            </div>
         </div>
-      </div>
+        </div>
     </section>
 
     <section id="projects">
@@ -144,6 +232,27 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="github-contribution">
+        <h2>My GitHub Contributions</h2>
+
+    <div class="github-cal-card">
+        <div class="github-cal-header">
+            <div class="github-apple-navigator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <span class="github-cal-title">@Vyronevra-dev contributions</span>
+        </div>
+        <div class="github-cal-body">
+            <h3>The Calendar</h3>
+            <p>Every box represents a day and each shade represents how much work i did.</p>
+            <img src="https://ghchart.rshah.org/C8917A/Vyronevra-dev" alt="GitHub Contributions" draggable="false" />
+            <p>293 contributions in the last year</p>
+        </div>
+    </div>
     </section>
 
     <section id="certificates">
@@ -223,6 +332,8 @@
         </div>
     </div>
     </section>
+
+
 
     <footer>
         <div class="footer-container">
