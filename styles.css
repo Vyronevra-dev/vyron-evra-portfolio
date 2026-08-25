@@ -12,7 +12,7 @@ html {
     overflow-x: hidden;
     scroll-behavior: smooth;
     scrollbar-color: #C8917A rgba(200, 145, 122, 0.1);
-    scrollbar-width: thin;
+    scrollbar-width: auto;
 }
 
 ::selection {
@@ -776,128 +776,131 @@ h2 span {
 
 }
 
+/* Projects */
+#projects {
+    padding: 20px;
+}
+
 #projects h2 {
-    margin-top: 50px;
     color: #f0f0f0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Poppins', 'Inter'; 
-    text-align: center;
-    margin-bottom: 15px;   
+    border-left: 3px solid #C8917A;
+    padding-left: 20px; 
+    margin-bottom: 35px;  
 }
 
-.projects {
+#projects #mobiles-show {
+    color: #4ade80;
+    font-style: italic;
+    font-size: 13px;
+    font-family: "Space Mono", monospace;
+}
+
+.marquee-wrapper {
     width: 100%;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    border-radius: 10px;
+    padding: 10px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
 }
 
-.projects img {
+.marquee-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.marquee-track {
+    animation: none;
+    width: max-content;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 15px;
+    animation: none;
+    width: max-content;
+}
+
+.project-card {
+    position: relative;
+    border-radius: 12px;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.project-card.show-desktops {
+    display: none;
+}
+
+.project-card img {
     width: 100%;
     height: 100%;
-    display: block;
-    margin-bottom: 20px;
     object-fit: cover;
-    transform-origin: center center;
-    transition: transform 0.7s ease-in-out;
-    border-radius: 5px;
+    display: block;
+    filter: brightness(50%);
 }
 
-.project {
-    width: 95%;
-    padding: 1rem;
-    margin: 0 auto 5%;
-    background: #252535;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    transition: border 0.5s;
-    outline: none;
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 16px;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    cursor: pointer;
 }
 
-.project:hover {
-    border: 1px solid #C8917A;
-}
-
-.project-title h3 {
+.project-overlay h3 {
     font-family: 'Poppins', 'Inter';
     color: #f0f0f0;
-    margin: 10px 0;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
 }
 
-.project-title p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.9rem;
-    color: rgba(240, 240, 240, 0.6);
-    letter-spacing: 1.25px;
+.project-overlay p {
+    font-family: 'Poppins', 'Inter';
+    color: rgba(240, 240, 240, 0.8);
+    font-size: 0.7rem;
+    line-height: 1.4;
     margin-bottom: 10px;
 }
 
-.project-title div {
+.project-overlay .project-tags {
     display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
     flex-wrap: wrap;
-    gap: 10px;
-
 }
 
-.project-title span {
+.project-overlay .project-tags span {
+    font-family: "Space Mono", monospace;
+    font-size: 0.7rem;
+    color: #C8917A;
+    border: 1px solid #C8917A;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+.project-overlay a {
     font-family: "Space Mono", monospace;
     font-size: 0.75rem;
-    color: #808080;
-    padding: 5px 15px;
-    border: 1px solid #808080;
-    border-radius: 20px;
-    letter-spacing: 2px;
+    color: #C8917A;
+    text-decoration: none;
+    width: fit-content;
+    border-bottom: 1px solid #C8917A;
+    padding-bottom: 2px;
+    transition: opacity 0.3s;
 }
 
-#projects button {
-    padding: 10px 20px;
-    background-color: #C8917A;
-    color: #252535;
-    border: none;
-    border-radius: 5px;
-    display: block;
-    margin: 7% auto;
-    transition: background-color 0.3s;
-    font-weight: bold;
+@media (min-width: 768px) {
+
 }
 
-#projects button:hover {
-    background-color: rgba(200, 145, 122, 0.9);
-    cursor: pointer;
-}
-
-@media (min-width: 700px) {
-    .project {
-        padding: 1.5rem;
-    }
-
-    .projects {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 30px;
-        row-gap: 15px;
-        padding: 30px;
-        border: 3px solid #2f2f2f;
-
-    }
-}
-
-@media (min-width: 1024px) {
-    .projects {
-        width: 70%;
-        margin: 0 auto;
-    }
-
-    #projects h2 {
-        font-size: 2.3rem;
-    }
-}
-
+/* Contact Section */
 #contact h2 {
     margin-top: 50px;
     color: #f0f0f0;
@@ -906,6 +909,7 @@ h2 span {
     text-align: center;
     margin-bottom: 15px;     
 }
+
 
 footer {
     width: 100%;
