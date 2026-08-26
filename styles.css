@@ -849,7 +849,7 @@ h2 span {
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: blur(1px) brightness(50%);
+    filter: blur(2px) brightness(45%);
 }
 
 .project-overlay {
