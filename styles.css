@@ -865,16 +865,18 @@ h2 span {
 .project-overlay h3 {
     font-family: 'Poppins', 'Inter';
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     margin-bottom: 6px;
+    text-align: center;
 }
 
 .project-overlay p {
     font-family: 'Poppins', 'Inter';
     color: #f0f0f0;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     line-height: 1.4;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .project-link {
