@@ -1622,3 +1622,34 @@ input:-webkit-autofill:focus {
         margin-bottom: 20px;
     }
 }
+
+#stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background-color: transparent;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite, twinkle 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translate(0px, 0px) }
+    25% { transform: translate(10px, -15px) }
+    50% { tranform: translate(-5px, -25px) }
+    75% { transform: translate(-10px, -10px;) }
+    100% { tranform: translate(0px, 0px) }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2 }
+    50% { opacity: 1 }
+}
