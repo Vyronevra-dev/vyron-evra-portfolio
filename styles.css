@@ -304,11 +304,14 @@ h1 {
     }
 }
 
+#home {
+    padding: 20px;
+}
+
 .hero {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    padding: 15px;
     flex-direction: column-reverse;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -354,9 +357,10 @@ h2 span {
     border: none;
     color: #252535;
     border-radius: 5px;
-    transition: background-color 0.3s;
     width: fit-content;
     font-family: 'Poppins', 'Inter';
+    cursor: pointer;
+    transition: box-shadow 0.5s;
 }
 
 .hero a {
@@ -364,11 +368,14 @@ h2 span {
 }
 
 .hero-button:hover {
-    background-color: rgba(200, 145, 122, 0.9);
-    cursor: pointer;
+    box-shadow: 0 0 25px 8px rgba(200, 145, 122, 0.4);
 }
 
 @media (min-width: 768px) {
+    #home {
+        padding: 0 50px;
+    }
+
     .hero {
         display: flex;
         flex-wrap: nowrap;
@@ -377,8 +384,8 @@ h2 span {
     }
 
     .hero img {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
     }
     
     h2 span {
@@ -391,25 +398,22 @@ h2 span {
     }
 
     .hero-button {
-    padding: 15px 25px;
-    font-size: 1.1rem;
+        padding: 15px 25px;
+        font-size: 1.1rem;
     }
 }
 
 @media (min-width: 1024px) {
     .hero {
-        width: 85%;
-        margin-left: auto;
-        margin-right: auto;
+        display: flex;
         flex-direction: row;
-        margin-bottom: 50px;
         margin-top: 100px;
         gap: 50px;
 
     }
 
     #home {
-        margin-bottom: 70px;
+        padding: 0 100px 50px;
     }
 
     h2 span {
@@ -1060,13 +1064,18 @@ h2 span {
 }
 
 /* Contact Section */
+#contact {
+    padding: 20px;
+    margin-top: 20px;
+}
 #contact h2 {
-    margin-top: 50px;
     color: #f0f0f0;
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-family: 'Poppins', 'Inter'; 
-    text-align: center;
-    margin-bottom: 15px;     
+    margin-bottom: 15px;   
+    border-left: 3px solid #C8917A;
+    padding-left: 20px;
+    margin-bottom: 30px;
 }
 
 
@@ -1251,22 +1260,24 @@ footer hr {
 }
 
 #certificates {
-    padding-bottom: 10%;
+    padding: 20px;
+    margin-top: 40px;
 }
 
 #certificates h2 {
-    margin-top: 50px;
+    font-size: 1.2rem;
     color: #f0f0f0;
-    font-size: 2rem;
-    font-family: 'Poppins', 'Inter'; 
-    text-align: center;
-    margin-bottom: 15px;   
+    border-left: 3px solid #C8917A;
+    padding-left: 20px;
+    font-family: 'Poppins', 'Inter';
+    margin-bottom: 30px;
 }
 
 .certificates {
     width: 100%;
-    padding-top: 30px;
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .certificates a {
@@ -1274,11 +1285,9 @@ footer hr {
 }
 
 .certificate {
-    width: 90%;
     margin: 0 auto 5%;
     background: #252535;
     border: 1px solid rgba(200, 145, 122, 0.25);
-    border-top: 5px solid #C8917A;
     border-radius: 12px;
     padding: 1.5rem;
     transition: border 0.5s;
@@ -1316,8 +1325,19 @@ footer hr {
 }
 
 @media (min-width: 768px) {
+    #certificates {
+        padding: 20px 50px;
+        margin-top: 35px;
+    }
+    .certificates {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
     .certificate {
-        width: 50%;
+        width: 45%;
     }
 
     #certificates {
@@ -1326,6 +1346,14 @@ footer hr {
 }
 
 @media (min-width: 1024px) {
+    #certificates {
+        padding: 20px 100px;
+    }
+
+    #certificates h2 {
+        font-size: 1.5rem;
+    }
+
     .certificate {
         width: 30%;
     }
@@ -1336,7 +1364,6 @@ footer hr {
     flex-direction: column;
     gap: 20px;
     background-color: #252535;
-    width: 95%;
     margin: 0 auto;
     border: 1px solid rgba(200, 145, 122, 0.25);
     border-radius: 20px;
@@ -1475,9 +1502,19 @@ textarea::placeholder {
     width: 20px;
 }
 
+@media (min-width: 768px) {
+    #contact {
+        padding: 0 50px 20px;
+    }
+
+    #contact h2 {
+        font-size: 1.3rem;
+    }
+}
+
 @media (min-width: 1024px) {
-    #contact .contacts {
-        width: 85%;
+    #contact {
+        padding: 20px 100px;
     }
 }
 
@@ -1502,8 +1539,8 @@ input:-webkit-autofill:focus {
 }
 
 #github-contribution {
-    width: 90%;
-    margin: 20px auto;
+    padding: 20px;
+    margin: 30px auto;
 }
 
 #github-contribution h2 {
@@ -1584,8 +1621,8 @@ input:-webkit-autofill:focus {
 @media (min-width: 768px) {
     #github-contribution {
         width: 95%;
-        margin: 50px auto;
-        padding-bottom: 20px;
+        margin: 0 auto;
+        padding: 35px 35px;
     }
 
     #github-contribution h2 {
@@ -1599,7 +1636,7 @@ input:-webkit-autofill:focus {
 
 @media (min-width: 1024px) {
     #github-contribution {
-        width: 75%;
+        padding: 20px 75px;
         margin: 80px auto 0;
         padding-bottom: 50px;
     }
@@ -1621,35 +1658,4 @@ input:-webkit-autofill:focus {
         margin-top: 20px;
         margin-bottom: 20px;
     }
-}
-
-#stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-    background-color: transparent;
-}
-
-.star {
-    position: absolute;
-    background: white;
-    border-radius: 50%;
-    animation: float 6s ease-in-out infinite, twinkle 2s ease-in-out infinite;
-}
-
-@keyframes float {
-    0% { transform: translate(0px, 0px) }
-    25% { transform: translate(10px, -15px) }
-    50% { tranform: translate(-5px, -25px) }
-    75% { transform: translate(-10px, -10px;) }
-    100% { tranform: translate(0px, 0px) }
-}
-
-@keyframes twinkle {
-    0%, 100% { opacity: 0.2 }
-    50% { opacity: 1 }
 }
