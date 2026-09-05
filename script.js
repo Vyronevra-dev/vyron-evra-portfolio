@@ -211,3 +211,30 @@ async function fetchContributions() {
 }
 
 fetchContributions();
+
+// Pre-loader
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  loader.classList.add("hidden-loader");
+
+  loader.addEventListener("transitionend", () => {
+    loader.remove();
+  });
+});
+
+// CV Download Alert
+document.querySelector('.hero-button').addEventListener('click', () => {
+  fetch('https://formspree.io/f/xoeqlbyz', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      subject: 'CV Download Alert',
+      message: 'Someone downloaded your CV!',
+      time: new Date().toLocaleString(),
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      language: navigator.language,
+      device: navigator.userAgent
+    })
+  })
+  .catch(err => console.error('Error:', err));
+});
