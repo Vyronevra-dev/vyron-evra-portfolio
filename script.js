@@ -4,6 +4,8 @@ const form = document.getElementById("contactForm");
 const firstName = document.querySelector("input[name='firstName']");
 const ring = document.querySelector("#cursorRing");
 const starsContainer = document.getElementById("stars");
+const sections = document.querySelectorAll('section');
+const navAnchors = document.querySelectorAll('.nav-links li a');
 let mouseX = 0, mouseY = 0;
 let ringX = 0, ringY = 0;
 
@@ -238,3 +240,56 @@ document.querySelector('.hero-button').addEventListener('click', () => {
   })
   .catch(err => console.error('Error:', err));
 });
+
+// nav achors underline when in section
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navAnchors.forEach(link => link.classList.remove('active-anchor'));
+      const id = entry.target.id;
+      document.querySelector(`.nav-links li a[href="#${id}"]`)?.classList.add('active-anchor');
+    }
+  });
+}, { threshold: 0.5 });
+
+sections.forEach(section => observer.observe(section));
+
+// Typewriter
+const words = ["Let's Work Together", "Bring your idea, I'll build it", "initialize project()"];
+const el = document.querySelector('.typewriter');
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function type() {
+  const current = words[wordIndex];
+
+  if (deleting) {
+    el.textContent = current.substring(0, charIndex--);
+  } else {
+    el.textContent = current.substring(0, charIndex++);
+  }
+
+  let speed = deleting ? 60 : 100;
+
+  if (!deleting && charIndex === current.length + 1) {
+    speed = 1500; // pause before deleting
+    deleting = true;
+  } else if (deleting && charIndex === 0) {
+    deleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+    speed = 300; // pause before typing next word
+  }
+
+  setTimeout(type, speed);
+}
+
+type();
+
+// footer year
+const date = new Date();
+let time = document.querySelector(".time");
+let year = document.querySelector(".year");
+
+year.textContent = ` ${date.getFullYear()} Vyron • All rights reserved`;
+time.textContent = ` Nairobi • ${date.toLocaleTimeString()}`;
