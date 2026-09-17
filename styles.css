@@ -1141,7 +1141,7 @@ footer {
 
 .footer .year::before {
     content: "©";
-    font-size: 20px;
+    font-size: 12px;
     vertical-align: middle;
 }
 
@@ -1151,7 +1151,7 @@ footer {
 
 .footer .time::before {
     content: "•";
-    font-size: 20px;
+    font-size: 12px;
 }
 
 @media (min-width: 768px) {
