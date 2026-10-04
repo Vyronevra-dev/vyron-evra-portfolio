@@ -1139,19 +1139,8 @@ footer {
     margin-bottom: 10px;
 }
 
-.footer .year::before {
-    content: "©";
-    font-size: 12px;
-    vertical-align: middle;
-}
-
 .footer .time {
     color: #f0f0f0;
-}
-
-.footer .time::before {
-    content: "•";
-    font-size: 12px;
 }
 
 @media (min-width: 768px) {

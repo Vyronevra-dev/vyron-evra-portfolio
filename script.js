@@ -255,7 +255,7 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach(section => observer.observe(section));
 
 // Typewriter
-const words = ["Let's Work Together", "Bring your idea, I'll build it", "initialize project()"];
+const words = ["Let's Work Together", "Bring your idea, I'll build it", "initialize project()", "What are you waiting for?", "Contact Me!"];
 const el = document.querySelector('.typewriter');
 let wordIndex = 0;
 let charIndex = 0;
@@ -291,5 +291,5 @@ const date = new Date();
 let time = document.querySelector(".time");
 let year = document.querySelector(".year");
 
-year.textContent = ` ${date.getFullYear()} Vyron • All rights reserved`;
-time.textContent = ` Nairobi • ${date.toLocaleTimeString()}`;
+year.textContent = `© ${date.getFullYear()} Vyron • All rights reserved`;
+time.textContent = `• Nairobi • ${date.toLocaleTimeString()}`;
