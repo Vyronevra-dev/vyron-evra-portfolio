@@ -30,6 +30,8 @@ const commands = {
     'ls projects/': `Open the projects section to see these in real time:
 
   ashbourne-school    — live
+  mjamaa-bank         — live
+  meloflix-music      — live
   ellingtons-motors   — live
   codepanda           — live
   seed-initiative     — coming soon`,
