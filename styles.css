@@ -11,8 +11,47 @@
 html {
     overflow-x: hidden;
     scroll-behavior: smooth;
-    scrollbar-color: #C8917A rgba(200, 145, 122, 0.1);
-    scrollbar-width: auto;
+}
+
+html::-webkit-scrollbar {
+    width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background: #13131f;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #C8917A;
+    border-radius: 6px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: #e0a88f; /* lighter version of your color */
+}
+
+html::-webkit-scrollbar-button:single-button {
+    display: block;
+    height: 12px;
+    background-color: #13131f;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px;
+}
+
+/* up arrow */
+html::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'><path d='M1 7 L5 3 L9 7 Z' fill='%23C8917A'/></svg>");
+}
+
+/* down arrow */
+html::-webkit-scrollbar-button:single-button:vertical:increment {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'><path d='M1 3 L5 7 L9 3 Z' fill='%23C8917A'/></svg>");
+}
+
+/* hover */
+html::-webkit-scrollbar-button:single-button:hover {
+    background-color: #1e1e30;
 }
 
 ::selection {
@@ -1137,6 +1176,12 @@ footer {
     text-align: center;
     display: block;
     margin-bottom: 10px;
+}
+
+.footer .copy-symbol {
+    display: inline;
+    margin-bottom: 0;
+    font-family: Arial, sans-serif;
 }
 
 .footer .time {

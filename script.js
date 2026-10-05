@@ -289,9 +289,14 @@ function type() {
 type();
 
 // footer year
-const date = new Date();
-let time = document.querySelector(".time");
-let year = document.querySelector(".year");
+const time = document.querySelector(".time");
+const year = document.querySelector(".year");
 
-year.textContent = `© ${date.getFullYear()} Vyron • All rights reserved`;
-time.textContent = `• Nairobi • ${date.toLocaleTimeString()}`;
+year.innerHTML = `<span class="copy-symbol">©</span> ${new Date().getFullYear()} Vyron • All rights reserved`;
+function updateClock() {
+  const now = new Date();
+  time.textContent = `• Nairobi • ${now.toLocaleTimeString('en-GB', { timeZone: 'Africa/Nairobi' })}`;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
