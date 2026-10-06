@@ -249,7 +249,7 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach(section => observer.observe(section));
 
 // Typewriter
-const words = ["Let's Work Together", "Bring your idea, I'll build it", "initialize project()", "What are you waiting for?", "Contact Me!"];
+const words = ["Let's Work Together", "Bring your idea, I'll build it", "initialize project()", "What are you waiting for?", "Contact me today!"];
 const el = document.querySelector('.typewriter');
 let wordIndex = 0;
 let charIndex = 0;
