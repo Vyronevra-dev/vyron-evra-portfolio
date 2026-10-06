@@ -16,7 +16,7 @@ const contributionLevels = {
 
 async function getContributions() {
     try {
-        const response = await fetch("/api/github-contributions");
+        const response = await fetch("/api/contributions");
 
         if (!response.ok) {
             throw new Error("Unable to retrieve GitHub data.");
