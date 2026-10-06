@@ -1525,12 +1525,12 @@ input:-webkit-autofill:focus {
     --text: #f4f7f8;
     --muted: #626a75;
     --border: rgba(255, 255, 255, 0.08);
-    --accent: #00ffd5;
-    --level-0: #101419;
-    --level-1: #073d3b;
-    --level-2: #08766c;
-    --level-3: #00b89f;
-    --level-4: #00ffd5;
+    --accent: #C8917A;
+    --level-0: #2a2a3b;
+    --level-1: #4a352e;
+    --level-2: #7d5646;
+    --level-3: #C8917A;
+    --level-4: #f0b9a2;
 
     user-select: none;
     position: relative;
@@ -1673,10 +1673,10 @@ input:-webkit-autofill:focus {
 .contribution-cell:hover::after { transform: translate(-50%, 0); opacity: 1; }
 
 .level-0 { background: var(--level-0); }
-.level-1 { background: var(--level-1); box-shadow: 0 0 5px rgba(0, 255, 213, 0.15); }
-.level-2 { background: var(--level-2); box-shadow: 0 0 7px rgba(0, 255, 213, 0.22); }
-.level-3 { background: var(--level-3); box-shadow: 0 0 10px rgba(0, 255, 213, 0.3); }
-.level-4 { background: var(--level-4); box-shadow: 0 0 6px var(--accent), 0 0 18px rgba(0, 255, 213, 0.5); }
+.level-1 { background: var(--level-1); box-shadow: 0 0 5px rgba(200, 145, 122, 0.15); }
+.level-2 { background: var(--level-2); box-shadow: 0 0 7px rgba(200, 145, 122, 0.22); }
+.level-3 { background: var(--level-3); box-shadow: 0 0 10px rgba(200, 145, 122, 0.3); }
+.level-4 { background: var(--level-4); box-shadow: 0 0 6px var(--accent), 0 0 18px rgba(200, 145, 122, 0.5); }
 
 .calendar-footer {
     position: relative;
