@@ -1607,6 +1607,10 @@ input:-webkit-autofill:focus {
 
 .identity p { margin: 5px 0 0; color: var(--muted); font: 12px monospace; }
 
+#total {
+    font-family: "Space Mono", monospace;
+}
+
 .total { text-align: right; }
 .total strong { display: block; font-size: 28px; letter-spacing: -0.05em; }
 .total span { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; font-family: "Space Mono", monospace; }
