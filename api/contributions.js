@@ -1,25 +1,46 @@
+const QUERY = `
+query ($username: String!) {
+  user(login: $username) {
+    login
+    contributionsCollection {
+      contributionCalendar {
+        totalContributions
+        months { name year firstDay totalWeeks }
+        weeks { contributionDays { date contributionCount contributionLevel weekday } }
+      }
+    }
+  }
+}`;
+
 export default async function handler(req, res) {
-    const query = `
-    {
-        user(login: "Vyronevra-dev") {
-            contributionsCollection {
-                contributionCalendar {
-                    totalContributions
-                }
-            }
+    try {
+        const response = await fetch("https://api.github.com/graphql", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${process.env.GITHUB_TOKEN}`,
+                "User-Agent": "Vyronevra-Portfolio"
+            },
+            body: JSON.stringify({ query: QUERY, variables: { username: "Vyronevra-dev" } })
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || result.errors || !result.data) {
+            console.error("GitHub error:", result);
+            return res.status(502).json({ error: "GitHub request failed." });
         }
-    }`;
 
-    const response = await fetch("https://api.github.com/graphql", {
-        method: "POST",
-        headers: {
-            "Authorization": `Bearer ${process.env.GITHUB_TOKEN}`,
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ query })
-    });
+        const cal = result.data.user.contributionsCollection.contributionCalendar;
 
-    const data = await response.json();
-    const total = data.data.user.contributionsCollection.contributionCalendar.totalContributions;
-    res.json({ total });
+        res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate=86400");
+        return res.status(200).json({
+            totalContributions: cal.totalContributions,
+            months: cal.months,
+            days: cal.weeks.flatMap(w => w.contributionDays)
+        });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: "Unable to load contributions." });
+    }
 }

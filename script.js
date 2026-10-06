@@ -207,14 +207,6 @@ form.addEventListener("submit", async (e) => {
     }
 });
 
-async function fetchContributions() {
-    const res = await fetch("/api/contributions");
-    const data = await res.json();
-    document.querySelector(".contributions-count").textContent =
-        `${data.total} contributions in the last year`;
-}
-
-fetchContributions();
 
 // Pre-loader
 window.addEventListener("load", () => {

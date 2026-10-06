@@ -374,23 +374,50 @@
     </section>
 
     <section id="github-contribution">
-        <h2>My GitHub Contributions</h2>
+    <h2>My GitHub Contributions</h2>
 
-    <div class="github-cal-card">
-        <div class="github-cal-header">
-            <div class="github-apple-navigator">
-                <span></span>
-                <span></span>
-                <span></span>
+    <div class="contribution-card">
+        <header class="calendar-header">
+            <div class="identity">
+                <span class="status-dot"></span>
+                <div>
+                    <h3>CONTRIBUTION MATRIX</h3>
+                    <p>github.activity // Vyronevra-dev</p>
+                </div>
             </div>
-            <span class="github-cal-title">@Vyronevra-dev contributions</span>
+            <div class="total">
+                <strong id="total">—</strong>
+                <span>total contributions</span>
+            </div>
+        </header>
+
+        <div class="calendar-container">
+            <div class="calendar">
+                <div class="month-spacer"></div>
+                <div class="months" id="months"></div>
+                <div class="days">
+                    <span></span><span>MON</span><span></span><span>WED</span><span></span><span>FRI</span><span></span>
+                </div>
+                <div class="contribution-grid" id="contributionGrid"></div>
+            </div>
         </div>
-        <div class="github-cal-body">
-            <h3>The Calendar</h3>
-            <p>Every box represents a day and each shade represents how much work i did.</p>
-            <img src="https://ghchart.rshah.org/C8917A/Vyronevra-dev" alt="GitHub Contributions" draggable="false" />
-            <p class="contributions-count">loading...</p>
-        </div>
+
+        <footer class="calendar-footer">
+            <div class="stats">
+                <div class="stat"><strong id="activeDays">—</strong><span>active days</span></div>
+                <div class="stat"><strong id="streak">—</strong><span>current streak</span></div>
+                <div class="stat"><strong id="peak">—</strong><span>peak day</span></div>
+            </div>
+            <div class="legend">
+                <span>LOW</span>
+                <div class="legend-cells">
+                    <span class="level-0"></span><span class="level-1"></span><span class="level-2"></span><span class="level-3"></span><span class="level-4"></span>
+                </div>
+                <span>HIGH</span>
+            </div>
+        </footer>
+
+        <div class="error-message" id="errorMessage">Unable to load GitHub activity.</div>
     </div>
     </section>
 
@@ -494,6 +521,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="calendar.js" defer></script>
 </body>
 </html>
 
