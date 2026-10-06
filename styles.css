@@ -1598,7 +1598,7 @@ input:-webkit-autofill:focus {
 
 .identity h3 {
     margin: 0;
-    font-family: 'Poppins', 'Inter', sans-serif;
+    font-family: "Space Mono", monospace;
     font-size: 19px;
     font-weight: 650;
     letter-spacing: -0.02em;
@@ -1609,9 +1609,9 @@ input:-webkit-autofill:focus {
 
 .total { text-align: right; }
 .total strong { display: block; font-size: 28px; letter-spacing: -0.05em; }
-.total span { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; }
+.total span { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; font-family: "Space Mono", monospace; }
 
-.calendar-container { position: relative; z-index: 1; overflow-x: auto; padding-bottom: 10px; }
+.calendar-container { position: relative; z-index: 1; overflow-x: auto; padding-bottom: 10px; scrollbar-width: thin; scrollbar-color: #C8917A #13131f; }
 
 .calendar {
     min-width: 850px;
@@ -1690,7 +1690,7 @@ input:-webkit-autofill:focus {
     border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.stats { display: flex; gap: 25px; }
+.stats { display: flex; gap: 25px; font-family: "Space Mono", monospace; }
 .stat { display: flex; flex-direction: column; gap: 4px; }
 .stat strong { font-size: 14px; font-weight: 650; }
 .stat span { color: var(--muted); font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; }
