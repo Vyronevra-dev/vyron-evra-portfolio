@@ -1582,19 +1582,11 @@ input:-webkit-autofill:focus {
     margin-bottom: 28px;
 }
 
-.identity { display: flex; align-items: center; gap: 12px; }
-
-.status-dot {
-    width: 9px;
-    height: 9px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 8px var(--accent), 0 0 20px var(--accent);
-    animation: pulse 1.8s infinite;
+.identity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
-
-@keyframes pulse { 50% { opacity: 0.35; transform: scale(0.75); } }
 
 .identity h3 {
     margin: 0;
@@ -1605,13 +1597,39 @@ input:-webkit-autofill:focus {
     color: var(--text);
 }
 
-.identity p { margin: 5px 0 0; color: var(--muted); font: 12px monospace; }
+.identity p {
+    margin: 5px 0 0;
+    color: var(--muted);
+    font: 12px monospace;
+}
 
-.total { text-align: right; }
-.total strong { display: block; font-size: 28px; letter-spacing: -0.05em; font-family: "Space Mono", monospace; }
-.total span { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; font-family: "Space Mono", monospace; }
+.total {
+    text-align: right;
+}
 
-.calendar-container { position: relative; z-index: 1; overflow-x: auto; padding-bottom: 10px; scrollbar-width: thin; scrollbar-color: #C8917A #13131f; }
+.total strong {
+    display: block;
+    font-size: 28px;
+    letter-spacing: -0.05em;
+    font-family: "Space Mono", monospace;
+}
+
+.total span {
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: "Space Mono", monospace;
+}
+
+.calendar-container {
+    position: relative;
+    z-index: 1;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #C8917A #13131f;
+}
 
 .calendar {
     min-width: 850px;
@@ -1621,12 +1639,36 @@ input:-webkit-autofill:focus {
     gap: 6px;
 }
 
-.month-spacer { grid-column: 1; }
-.months { grid-column: 2; display: flex; height: 20px; color: var(--muted); font: 10px monospace; text-transform: uppercase; }
-.month { flex-shrink: 0; padding-left: 2px; }
+.month-spacer {
+    grid-column: 1;
+}
 
-.days { grid-column: 1; display: grid; grid-template-rows: repeat(7, 1fr); color: #505660; font: 9px monospace; }
-.days span { display: flex; align-items: center; }
+.months {
+    grid-column: 2;
+    display: flex;
+    height: 20px;
+    color: var(--muted);
+    font: 10px monospace;
+    text-transform: uppercase;
+}
+
+.month {
+    flex-shrink: 0;
+    padding-left: 2px;
+}
+
+.days {
+    grid-column: 1;
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    color: #505660;
+    font: 9px monospace;
+}
+
+.days span {
+    display: flex;
+    align-items: center;
+}
 
 .contribution-grid {
     grid-column: 2;
@@ -1648,7 +1690,11 @@ input:-webkit-autofill:focus {
     transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
 }
 
-.contribution-cell:hover { z-index: 10; transform: scale(1.65); filter: brightness(1.5); }
+.contribution-cell:hover {
+    z-index: 10;
+    transform: scale(1.65);
+    filter: brightness(1.5);
+}
 
 .contribution-cell::after {
     content: attr(data-date) " • " attr(data-count) " contributions";
