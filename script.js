@@ -34,7 +34,7 @@ const commands = {
   meloflix-music      — live
   ellingtons-motors   — live
   codepanda           — live
-  seed-initiative     — coming soon`,
+  seed-initiative     — live`,
 
     'ls skills/': `Each skill is proven by real projects:
 
