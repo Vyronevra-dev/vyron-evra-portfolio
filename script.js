@@ -25,7 +25,7 @@ const commands = {
 
     whoami: `Vyron Evra Ojoy. 19. CS student at Chuka University, graduating 2030. Born and raised in Nairobi, Kenya. Started building in 2026 at Ta'awun Vocational Training College after realizing I cared more about making things than studying them.`,
 
-    'cat about.txt': `I build with HTML, CSS, and JavaScript. Clean interfaces, purposeful code. Alongside development I am self-studying cybersecurity because I want to understand systems well enough to both build and break them. I hold myself to a high standard regardless of the project size or who it is for. Open for freelance 24/7.`,
+    'cat about.txt': `I build with HTML, CSS, JavaScript and React. Clean interfaces, purposeful code. Alongside development I am self-studying cybersecurity because I want to understand systems well enough to both build and break them. I hold myself to a high standard regardless of the project size or who it is for. Open for freelance 24/7.`,
 
     'ls projects/': `Open the projects section to see these in real time:
 
@@ -40,7 +40,8 @@ const commands = {
 
   • HTML              • Git
   • CSS               • GitHub
-  • JavaScript        • Vercel
+  • JavaScript	      • Vercel
+  • React
   • Cybersecurity (learning)`,
 
     focus: `Currently focused on two things:
