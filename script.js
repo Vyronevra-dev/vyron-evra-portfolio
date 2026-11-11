@@ -8,7 +8,14 @@ const sections = document.querySelectorAll('section');
 const navAnchors = document.querySelectorAll('.nav-links li a');
 let mouseX = 0, mouseY = 0;
 let ringX = 0, ringY = 0;
-
+const closeModal = document.querySelectorAll('.close-modal');
+const closeDialog = document.querySelectorAll('.close-dialog');
+const certificates = document.querySelectorAll('.certificate');
+const dialog1 = document.getElementById('1');
+const dialog2 = document.getElementById('2');
+const dialog3 = document.getElementById('3');
+const showCertificates = document.querySelectorAll('.show-certificate');
+const openCertificate = document.querySelectorAll('.open-certificate');
 
 const commands = {
     help: `available commands:
@@ -292,3 +299,61 @@ function updateClock() {
 
 updateClock();
 setInterval(updateClock, 1000);
+
+
+// Dialogs 
+certificates.forEach((certificate) => {
+  certificate.addEventListener('click', (e) => {
+    const card = e.target.closest('.certificate');
+    if (card.classList.contains(`${dialog1.id}`)) {
+      dialog1.showModal();
+    }
+    else if (card.classList.contains(`${dialog2.id}`)) {
+      dialog2.showModal();
+    }
+    else if (card.classList.contains(`${dialog3.id}`)) {
+      dialog3.showModal();
+    }
+  })
+})
+
+
+closeModal.forEach((button) => {
+  const btnId = button.id;
+  const id = btnId[btnId.length - 1];
+
+  button.addEventListener('click', () => {
+    showCertificates.forEach((dialog) => {
+      if (dialog.id === id) {
+        dialog.close();
+      }
+    })
+  })
+})
+
+
+closeDialog.forEach((btn) => {
+  const btnId = btn.id;
+  const id = btnId[btnId.length - 1];
+
+  btn.addEventListener('click', () => {
+    showCertificates.forEach((dialog) => {
+      if (dialog.id === id) {
+        dialog.close();
+      }
+    })
+  })
+})
+
+openCertificate.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const dialog = btn.closest('.show-certificate');
+    const urls = {
+      '1': "https://www.freecodecamp.org/certification/vyron-evra2007/responsive-web-design-v9",
+      '2': "#",
+      '3': "#"
+    };
+    window.open(urls[dialog.id], '_blank');
+  })
+})

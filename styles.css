@@ -1764,3 +1764,145 @@ input:-webkit-autofill:focus {
     0%, 100% { opacity: 1 }
     50% { opacity: 0 }
 }
+
+.show-certificate {
+    border: 1px solid #C8917A;
+    background: rgba(30, 30, 46, 0.7);
+    backdrop-filter: blur(50px);
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+    z-index: 101;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    outline: none;
+}
+
+.certificate-btns-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.transparent {
+    opacity: 0;
+}
+
+.certificate-btns-container button {
+    width: 30px;
+    aspect-ratio: 1/1;
+    background-color: #C8917A;
+    border: none;
+    border-radius: 3px;
+    font-weight: 900;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+}
+
+.certificate-image {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+}
+
+.certificate-image img {
+    width: 40%;
+    border-radius: 5px;
+}
+
+.certificate-info {
+    width: 60%;
+    padding-top: 20px;
+}
+
+.certificate-info h2 {
+    color: #f0f0f0;
+    font-size: 1.5rem;
+    font-family: 'Poppins', 'Inter'; 
+    border-left: 3px solid #C8917A;
+    padding-left: 20px;
+    margin-bottom: 50px;   
+}
+
+.dialog-btns {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin: 50px auto 0;
+}
+
+.open-certificate {
+    padding: 10px 20px;
+    background-color: #C8917A;
+    border: none;
+    border-radius: 5px;
+    color: #252535;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+}
+
+.close-dialog {
+    padding: 10px 20px;
+    background-color: #252535;
+    border: 1px solid #C8917A;
+    border-radius: 5px;
+    color: #C8917A;
+    font-weight: bold;    
+    cursor: pointer;
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .certificate-image {
+        flex-direction: column;
+    }
+
+    .certificate-image img {
+        width: 100%;
+    }
+
+    .dialog-btns {
+        width: 70%;
+    }
+
+    .certificate-info {
+        width: 100%;
+    }
+
+    .certificate-info p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 500px) {
+    .certificate-info h2 {
+        font-size: 18px;
+    }
+
+    .certificate-info p {
+        line-height: 2;
+    }
+
+    .dialog-btns {
+        width: 100%;
+    }
+}
+
+@media (max-width: 350px) {
+    .dialog-btns {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+#js-cancel,
+#cybersecurity-cancel {
+    cursor: not-allowed;
+    background-color: rgba(200, 145, 122, 0.5);
+}
