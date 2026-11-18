@@ -216,16 +216,6 @@ form.addEventListener("submit", async (e) => {
 });
 
 
-// Pre-loader
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-  loader.classList.add("hidden-loader");
-
-  loader.addEventListener("transitionend", () => {
-    loader.remove();
-  });
-});
-
 // CV Download Alert
 document.querySelector('.hero-button').addEventListener('click', () => {
   fetch('https://formspree.io/f/xoeqlbyz', {
